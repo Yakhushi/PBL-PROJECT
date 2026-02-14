@@ -1,109 +1,89 @@
 import os
 import hashlib
-import random
+import time
+import streamlit as st
 
-# -------------------------------
-# CONFIGURATION
-# -------------------------------
-LARGE_FILE_THRESHOLD_MB = 5  # Files larger than 5 MB considered large
-
-# Simulated cloud storage (in MB)
+LARGE_FILE_THRESHOLD_MB = 5
 clouds = [
     {"name": "Google Drive", "free_space": 1500},
     {"name": "OneDrive", "free_space": 5000},
     {"name": "Dropbox", "free_space": 2000}
 ]
 
-
-# -------------------------------
-# STORAGE SCANNING
-# -------------------------------
 def get_file_hash(file_path):
-    """Generate MD5 hash of file"""
     hasher = hashlib.md5()
     with open(file_path, 'rb') as f:
         while chunk := f.read(4096):
             hasher.update(chunk)
     return hasher.hexdigest()
 
-
-def scan_storage(folder_path):
+def scan_storage(folder):
     large_files = []
     duplicates = []
     seen_hashes = {}
-
-    for root, _, files in os.walk(folder_path):
+    for root, _, files in os.walk(folder):
         for file in files:
             file_path = os.path.join(root, file)
-
             try:
-                size_mb = os.path.getsize(file_path) / (1024 * 1024)
-
-                # Check for large files
+                size_mb = os.path.getsize(file_path) / (1024*1024)
                 if size_mb > LARGE_FILE_THRESHOLD_MB:
                     large_files.append((file_path, round(size_mb, 2)))
-
-                # Check for duplicates
                 file_hash = get_file_hash(file_path)
                 if file_hash in seen_hashes:
                     duplicates.append(file_path)
                 else:
                     seen_hashes[file_hash] = file_path
-
-            except Exception as e:
-                print("Error reading file:", file_path)
-
+            except:
+                pass
     return large_files, duplicates
 
-
-# -------------------------------
-# CLOUD SELECTION
-# -------------------------------
 def select_best_cloud(cloud_list):
-    best = max(cloud_list, key=lambda x: x["free_space"])
-    return best
+    return max(cloud_list, key=lambda x: x["free_space"])
 
-
-# -------------------------------
-# UPLOAD SIMULATION
-# -------------------------------
-def upload_file(file_path, cloud):
-    print(f"Uploading {file_path} to {cloud['name']}...")
-    # Simulate upload delay
-    print("Upload successful.\n")
-
-
-# -------------------------------
-# MAIN WORKFLOW
-# -------------------------------
 def main():
-    folder_to_scan = input("Enter folder path to scan: ")
+    st.title("Storage Scanner Demo")
+    folder_to_scan = st.text_input("Enter folder path to scan:", "")
 
-    print("\nScanning storage...\n")
-    large_files, duplicate_files = scan_storage(folder_to_scan)
+    if st.button("Scan Storage") and folder_to_scan:
+        st.info("Scanning storage...")
+        large_files, duplicate_files = scan_storage(folder_to_scan)
 
-    print("Large Files Detected:")
-    for file, size in large_files:
-        print(f"{file} - {size} MB")
+        st.subheader("Large Files Detected")
+        if large_files:
+            for file, size in large_files:
+                st.write(f"{file} - {size} MB")
+        else:
+            st.write("No large files found.")
 
-    print("\nDuplicate Files Detected:")
-    for file in duplicate_files:
-        print(file)
+        st.subheader("Duplicate Files Detected")
+        if duplicate_files:
+            for file in duplicate_files:
+                st.write(file)
+        else:
+            st.write("No duplicate files found.")
 
-    # Combine files suggested for offloading
-    suggested_files = [f[0] for f in large_files] + duplicate_files
+        suggested_files = [f[0] for f in large_files] + duplicate_files
+        if suggested_files:
+            best_cloud = select_best_cloud(clouds)
+            st.success(f"Best Cloud Selected: {best_cloud['name']} ({best_cloud['free_space']} MB free)")
 
-    if not suggested_files:
-        print("\nNo files suggested for offloading.")
-        return
-
-    best_cloud = select_best_cloud(clouds)
-    print(f"\nBest Cloud Selected: {best_cloud['name']}")
-    print(f"Available Free Space: {best_cloud['free_space']} MB\n")
-
-    for file in suggested_files:
-        upload_file(file, best_cloud)
-
+            st.subheader("Uploading Suggested Files")
+            for file in suggested_files:
+                st.write(f"Uploading {file}...")
+                progress = st.progress(0)
+                for i in range(1, 101):
+                    progress.progress(i)
+                    time.sleep(0.01)
+                st.success(f"Upload complete ✅\n")
+        else:
+            st.info("No files suggested for offloading.")
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+   
+    
