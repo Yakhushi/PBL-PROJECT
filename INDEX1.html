@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PBL 2026 Project</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: white;
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 8%;
+    position: sticky;
+    top: 0;
+    background: rgba(53, 19, 51, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #cbd5e1;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+.logo span {
+    color: #aa41aa;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    background: linear-gradient(to right, #60a5fa, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    margin-top: 20px;
+    color: #94a3b8;
+}
+
+/* SECTION */
+.section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+/* GRADIENT HEADING */
+.gradient-text {
+    font-size: 36px;
+    margin-bottom: 50px;
+    background: linear-gradient(to right, #60a5fa, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* GLASS CARD */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.4s;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+}
+
+/* METHODOLOGY CARDS */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.small {
+    width: 280px;
+}
+
+.highlight {
+    border: 1px solid #22c55e;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    background: linear-gradient(to right, #22c55e, #16a34a);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* RESULTS */
+.results-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 40px;
+    height: 250px;
+}
+
+.bar {
+    width: 60px;
+    border-radius: 15px;
+    animation: grow 1.5s ease-in-out;
+}
+
+.existing {
+    height: 70%;
+    background: #334155;
+}
+
+.solution {
+    height: 92%;
+    background: linear-gradient(to top, #60a5fa, #c084fc);
+}
+
+@keyframes grow {
+    from { height: 0; }
+}
+
+.accuracy-box {
+    width: 300px;
+}
+
+.accuracy {
+    font-size: 48px;
+    margin-top: 20px;
+    color: #60a5fa;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #64748b;
+}
+</style>
+
+</head>
+<body>
+
+<nav>
+    <div class="logo">PBL <span>2026</span></div>
+    <ul>
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#methodology">Methodology</a></li>
+        <li><a href="#results">Results</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h1>Smart Storage Optimization System</h1>
+    <p>A smart storage optimization system that analyzes phone storage,
+         identifies files safe to offload, and intelligently
+         uses multiple free cloud services to free local storage without data loss.</p>
+</section>
+
+<section id="problem" class="section">
+    <div class="glass-card">
+        <h2>Problem Statement</h2>
+        <p>
+            Android users frequently run out of storage,
+            but existing solutions either delete files blindly 
+            or force users to buy paid cloud storage.
+        </p>
+    </div>
+</section>
+
+<section id="methodology" class="section">
+    <h2 class="gradient-text">System Methodology</h2>
+
+    <div class="card-container">
+        <div class="glass-card small">
+            <h3>Dataset / Input</h3>
+            <p>
+
+DATASET / INPUT
+Source
+The dataset consists of simulated device storage metadata generated using Python. It includes file name, size, type, last accessed time, and hash values for duplicate detection. Cloud storage availability is also simulated.
+
+Size
+The prototype uses 4–10 structured file records for demonstration. In real implementation, it can scale to thousands of files.
+
+Preprocessing
+Structured data into Python dictionaries
+
+Converted sizes into MB format
+
+Calculated last usage in days
+
+Assigned hash values for duplicate detection</p>
+        </div>
+
+        <div class="glass-card small">
+            <h3>Model / Architecture</h3>
+            <p>Input Dataset
+                ↓
+            File Analysis Module
+                ↓
+            Duplicate Detection + Size Filter + Usage Filter
+                ↓
+            Decision Engine
+                ↓
+            Cloud Selection Module
+                ↓
+            Optimized Output Recommendation</p>
+        </div>
+
+        <div class="glass-card small highlight">
+            <h3>Live Execution</h3>
+            <button>View GitHub</button>
+        </div>
+    </div>
+</section>
+
+<section id="results" class="section">
+    <h2 class="gradient-text">Results & Analysis</h2>
+
+    <div class="results-container">
+        <div class="chart">
+            <div class="bar existing"></div>
+            <div class="bar solution"></div>
+        </div>
+
+        <div class="glass-card accuracy-box">
+            <h3>Accuracy / Performance</h3>
+            <div class="accuracy">92%</div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 | Department of Computer Science & Engineering
+</footer>
+
+</body>
+</html>

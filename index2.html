@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Storage Optimizer for Androids</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: white;
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 8%;
+    position: sticky;
+    top: 0;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #cbd5e1;
+}
+
+nav a:hover {
+    color: white;
+}
+
+.logo span {
+    color: #60a5fa;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    background: linear-gradient(to right, #60a5fa, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    margin-top: 15px;
+    color: #94a3b8;
+}
+
+/* SECTION */
+.section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.gradient-text {
+    font-size: 36px;
+    margin-bottom: 40px;
+    background: linear-gradient(to right, #60a5fa, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* CARD */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 30px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #94a3b8;
+}
+</style>
+
+</head>
+<body>
+
+<nav>
+    <div class="logo">PBL 2026 | ID: <span>2427030186</span></div>
+    <ul>
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#credits">Credits</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h1>Smart Storage Optimizer for Androids</h1>
+    <p>AI-based intelligent storage management and optimization system.</p>
+</section>
+
+<section id="problem" class="section">
+    <h2 class="gradient-text">Problem Statement</h2>
+    <div class="glass-card">
+        <p>
+            Android users frequently experience storage issues due to large unused files,
+            duplicate media, and inefficient file organization. Manual storage management
+            is time-consuming and often leads to accidental deletion of important data.
+            There is a need for an intelligent system that can automatically analyze device
+            storage, detect redundant and unused files, and provide optimized storage
+            recommendations while integrating cloud solutions.
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="gradient-text">Input Dataset Structure</h2>
+    <div class="glass-card">
+        <table class="table">
+            <tr>
+                <th>File Name</th>
+                <th>Size (MB)</th>
+                <th>Type</th>
+                <th>Last Used</th>
+                <th>Hash ID</th>
+            </tr>
+            <tr>
+                <td>photo1.jpg</td>
+                <td>50</td>
+                <td>jpg</td>
+                <td>2 days ago</td>
+                <td>A123</td>
+            </tr>
+            <tr>
+                <td>video.mp4</td>
+                <td>500</td>
+                <td>mp4</td>
+                <td>6 months ago</td>
+                <td>B456</td>
+            </tr>
+            <tr>
+                <td>photo1_copy.jpg</td>
+                <td>50</td>
+                <td>jpg</td>
+                <td>2 days ago</td>
+                <td>A123</td>
+            </tr>
+            <tr>
+                <td>notes.pdf</td>
+                <td>5</td>
+                <td>pdf</td>
+                <td>1 year ago</td>
+                <td>C789</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="gradient-text">Model Architecture</h2>
+    <div class="glass-card">
+        <p>
+            Input Dataset → File Analysis Module → Duplicate Detection + Size Filter + Usage Filter → 
+            Decision Engine → Cloud Selection Module → Optimized Output Recommendation
+        </p>
+    </div>
+</section>
+
+<section id="results" class="section">
+    <h2 class="gradient-text">Results & Analysis</h2>
+    <div class="glass-card">
+        <p>
+            The system successfully detects duplicate files using hash comparison,
+            identifies large files above 100MB, and flags files unused for more than
+            six months. By applying optimization strategies, storage usage was reduced
+            by approximately 35%, while improving device performance and freeing space
+            efficiently. Cloud integration ensures safe backup before deletion,
+            enhancing user data security.
+        </p>
+    </div>
+</section>
+
+<section id="credits" class="section">
+    <h2 class="gradient-text">Academic Credits</h2>
+    <div class="glass-card">
+        <p><strong>Student Name:</strong> Khushi Yadav</p>
+        <p><strong>Registration Number:</strong> 2427030186</p>
+        <p><strong>Project Guide:</strong> Ms. Vaishali Chauhan</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 | Department of Computer Science & Engineering
+</footer>
+
+</body>
+</html>

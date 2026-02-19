@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Storage Optimizer</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #442ea8, #6b39a5);
+    color: white;
+}
+
+section {
+    padding: 40px 10%;
+}
+
+h2 {
+    color: #36fcfc;
+    border-bottom: 2px solid #38ebf8;
+    padding-bottom: 8px;
+}
+
+/* THIS IS IMPORTANT FOR BOXES */
+.box {
+    background-color: #1e293b;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 12px;
+    border: 1px solid #38bdf8;
+    box-shadow: 0 0 15px rgba(56,189,248,0.3);
+}
+
+ul {
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #38bdf8;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0ea5e9;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0f172a;
+    border-top: 2px solid #38bdf8;
+}
+
+</style>
+</head>
+
+<body>
+
+    <!-- Project Title -->
+<section>
+<div class="box" style="text-align:center; font-size: 24px; font-weight: bold;">
+    SMART STORAGE OPTIMIZER FOR ANDROID DEVICES
+    <br><br>
+    <span style="font-size:16px; font-weight: normal;">
+        Project ID: 2427030186
+    </span>
+</div>
+</section>
+
+
+<!-- Problem Statement -->
+<section>
+<h2>Problem Statement</h2>
+<div class="box">
+Modern Android devices face storage inefficiency due to large unused files, duplicate media, and poor cloud utilization. Users often struggle to manually identify redundant data. This project proposes an intelligent storage optimization system that analyzes file metadata, detects duplicates using hash values, filters large and unused files, and recommends optimized cloud storage allocation.
+</div>
+</section>
+
+<!-- Literature Review -->
+<section>
+<h2>Literature Review</h2>
+<div class="box">
+Existing storage management solutions such as built-in Android 
+storage analyzers and third-party cleaning applications focus mainly
+ on identifying large files and clearing cache. Cloud storage platforms
+  like Google Drive, OneDrive, and Dropbox provide backup solutions but
+   do not intelligently decide which files should be offloaded based on
+    usage patterns and duplication.
+
+Previous research in storage optimization emphasizes file compression,
+manual backup, and cache cleaning. However, most systems require user 
+intervention and do not integrate intelligent decision-making for automatic
+ cloud selection based on available storage capacity.
+</div>
+</section>
+
+<!-- Research Gap / Innovation -->
+<section>
+<h2>Research Gap / Innovation</h2>
+<div class="box">
+Although many storage cleaning applications exist, they lack intelligent analysis 
+of user file behavior and do not provide optimized cloud allocation recommendations.
+
+Research Gap:
+<ul>
+<li>No combined system for duplicate detection + usage-based filtering</li>
+<li>Lack of smart cloud selection based on available storage</li>
+<li>Limited automation in file optimization decision-making</li>
+</ul>
+
+Innovation in This Project:
+<ul>
+<li>Hash-based duplicate file detection</li>
+<li>Usage-time analysis for identifying unused files</li>
+<li>Size-based intelligent filtering</li>
+<li>Cloud storage recommendation engine</li>
+<li>Fully automated optimization workflow</li>
+</ul>
+</div>
+</section>
+
+
+<!-- Data Input -->
+<section>
+<h2>Dataset / Input Source</h2>
+<div class="box">
+<b>Source:</b> Simulated Android storage metadata generated using Python.
+
+<ul>
+<li>File Name</li>
+<li>File Size (MB)</li>
+<li>File Type</li>
+<li>Last Accessed Time</li>
+<li>Hash Values (Duplicate Detection)</li>
+</ul>
+
+<b>Preprocessing:</b>
+<ul>
+<li>Converted sizes into MB</li>
+<li>Calculated unused days</li>
+<li>Duplicate hash comparison</li>
+</ul>
+</div>
+</section>
+
+<!-- Model Architecture -->
+<section>
+<h2>Model Architecture</h2>
+<div class="box">
+Input Dataset <br>
+↓ <br>
+File Analysis Module <br>
+↓ <br>
+Duplicate Detection + Size Filter + Usage Filter <br>
+↓ <br>
+Decision Engine <br>
+↓ <br>
+Cloud Selection Module <br>
+↓ <br>
+Optimized Output Recommendation
+</div>
+</section>
+
+<!-- Result -->
+<section>
+<h2>Result & Analysis</h2>
+<div class="box" contenteditable="true">
+ The proposed Smart Storage Optimizer was tested using a simulated dataset of file metadata. The system successfully:
+
+Identified large files exceeding the predefined size threshold
+
+Detected duplicate files using hash value comparison
+
+Identified rarely used files based on usage duration
+
+Selected the cloud platform with maximum available free space
+
+Generated optimized file offloading recommendations
+
+The system demonstrated correct classification and decision-making based on defined rules.
+
+Analysis
+The analysis shows that rule-based filtering combined with metadata evaluation can effectively optimize storage management. By integrating duplicate detection, usage frequency analysis, and cloud selection, the system reduces unnecessary manual effort.
+
+The results indicate that:
+
+Storage optimization decisions can be automated
+
+Duplicate and large files significantly contribute to storage usage
+
+Intelligent cloud selection improves storage distribution efficiency
+
+Although the current implementation uses a simulated dataset, the model can be scaled for real-world deployment with actual device storage data.
+</div>
+</section>
+
+<!-- Live Demo -->
+<section>
+<h2>Live Demo</h2>
+<div class="box">
+Demo link:
+
+<br><br>
+
+<a href="https://pbl-project-4pxoywq3zcu5uifq2kaol4.streamlit.app/" target="_blank">
+<button>View Live Demo</button>
+</a>
+
+<br><br>
+https://github.com/Yakhushi/PBL-PROJECT
+</div>
+</section>
+
+<!-- Credits -->
+<section>
+<h2>Academic Credits</h2>
+<div class="box">
+<b>Project Guide:</b> Ms. Vaishali Chauhan <br><br>
+<b>Student Name:</b> Khushi Yadav <br>
+<b>Registration Number:</b> 2427030186
+</div>
+</section>
+
+<footer>
+© 2026 Smart Storage Optimizer | PBL Submission
+</footer>
+
+</body>
+</html>
+

@@ -1,0 +1,9 @@
+{
+  "backend/main.mo": "Minimal Motoko actor with no functions.",
+  "feature_evidence.json": "Feature evidence report mapping product features to affected frontend files and components.",
+  "frontend-file-summaries.txt": "Prewritten summaries describing the purpose of each frontend file in the project.",
+  "frontend/index.css": "Global Tailwind CSS config defining theme variables for light/dark modes and applying base styles.",
+  "frontend/index.html": "Base HTML page that mounts the React app a…tend/src/projectData.ts", "Contains structured project content definitions and default placeholder data for all site sections.":
+  "frontend/tailwind.config.js", "Tailwind CSS configuration enabling dark mode, custom colors, typography, container settings, animations, and extended theme tokens for the project's UI styling.":
+  "project_state.json", "Tracks project metadata, design requirements, existing features, and architectural notes for building a dark-themed project presentation website.":
+}
