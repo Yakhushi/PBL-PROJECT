@@ -4,7 +4,7 @@ import time
 from pathlib import Path
 import streamlit as st
 
-st.set_page_config(page_title="StorageMind", page_icon="🗄️", layout="wide")
+st.set_page_config(page_title="Smart Storage Optimizer", page_icon="🗄️", layout="wide")
 
 # -----------------------------
 # CONFIG
