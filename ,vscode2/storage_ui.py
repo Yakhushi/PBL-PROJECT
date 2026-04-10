@@ -222,7 +222,7 @@ scan_upload = st.button("🚀 Scan Uploaded Files")
 # DEMO FOLDER PATH
 # -----------------------------
 # Change this if your folder path is different
-demo_folder = Path("demo2")
+demo_folder = Path(",vscode2/demo2")
 
 # Example:
 # demo_folder = Path(",vscode2/demo2")
